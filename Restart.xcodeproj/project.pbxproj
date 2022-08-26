@@ -96,7 +96,6 @@
 		C6F1CA9228B73BB200D693FA /* Restart */ = {
 			isa = PBXGroup;
 			children = (
-				C60F97AA28B9637F007AFFB5 /* Info.plist */,
 				C60F97A728B961EA007AFFB5 /* Screens */,
 				C60F97A828B961F9007AFFB5 /* Views */,
 				C60F97A928B9621A007AFFB5 /* Utilities */,
@@ -104,6 +103,7 @@
 				C6F1CA9328B73BB200D693FA /* RestartApp.swift */,
 				C6F1CA9728B73BB300D693FA /* Assets.xcassets */,
 				C6F1CA9928B73BB300D693FA /* Preview Content */,
+				C60F97AA28B9637F007AFFB5 /* Info.plist */,
 			);
 			path = Restart;
 			sourceTree = "<group>";
