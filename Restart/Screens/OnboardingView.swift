@@ -11,6 +11,7 @@ struct OnboardingView: View {
     // AppStorage onboarding will only initialize if it doesn't find this key/value in AppStorage; otherwise initialization is skipped
     @AppStorage("onboarding") var showingOnboardingView = true
     
+    @State private var isAnimating = false
     @State private var buttonOffset: CGFloat = 0
     private let buttonWidth = UIScreen.main.bounds.width - 80
     
@@ -35,13 +36,20 @@ struct OnboardingView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 10)
                 }
+                .opacity(isAnimating ? 1 : 0)
+                .offset(y: isAnimating ? 0 : -40)
+                .animation(.easeOut(duration: 1), value: isAnimating)
                 
                 Spacer()
                 
                 // MARK: ILLUSTRATION
                 ZStack {
                     CircleGroupView(shapeColor: .white, shapeOpacity: 0.2)
-                    Image("character-1").resizable().scaledToFit()
+                    Image("character-1")
+                        .resizable()
+                        .scaledToFit()
+                        .opacity(isAnimating ? 1 : 0)
+                        .animation(.easeOut(duration: 0.75), value: isAnimating)
                 }
                 
                 // MARK: CUSTOM BUTTON
@@ -84,11 +92,13 @@ struct OnboardingView: View {
                                     }
                                 })
                                 .onEnded({ _ in
-                                    if buttonOffset > buttonWidth / 2 {
-                                        buttonOffset = buttonWidth - 80
-                                        showingOnboardingView = false
-                                    } else {
-                                        buttonOffset = 0
+                                    withAnimation(Animation.easeOut(duration: 0.5)) {
+                                        if buttonOffset > buttonWidth / 2 {
+                                            buttonOffset = buttonWidth - 80
+                                            showingOnboardingView = false
+                                        } else {
+                                            buttonOffset = 0
+                                        }
                                     }
                                 })
                         )
@@ -98,7 +108,13 @@ struct OnboardingView: View {
                 }
                 .frame(width: buttonWidth, height: 80)
                 .padding()
+                .opacity(isAnimating ? 1 : 0)
+                .offset(y: isAnimating ? 0 : 40)
+                .animation(.easeOut(duration: 1), value: isAnimating)
             }
+        }
+        .onAppear {
+            isAnimating = true
         }
     }
 }

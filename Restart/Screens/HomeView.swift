@@ -11,6 +11,8 @@ struct HomeView: View {
     // AppStorage onboarding will only initialize if it doesn't find this key/value in AppStorage; otherwise initialization is skipped
     @AppStorage("onboarding") var showingOnboardingView = false
     
+    @State private var isAnimating = false
+    
     var body: some View {
         VStack(spacing: 20) {
             Spacer()
@@ -21,7 +23,13 @@ struct HomeView: View {
                 Image("character-2")
                     .resizable()
                     .scaledToFit()
-                .padding()
+                    .padding()
+                    .offset(y: isAnimating ? 35 : -35)
+                    .animation(
+                        Animation
+                            .easeInOut(duration: 4)
+                            .repeatForever(),
+                        value: isAnimating)
             }
             
             // MARK: TEXT
@@ -36,7 +44,9 @@ struct HomeView: View {
             
             // MARK: BUTTON
             Button {
-                showingOnboardingView = true
+                withAnimation {
+                    showingOnboardingView = true
+                }
             } label: {
                 Label {
                     Text("Restart")
@@ -50,6 +60,11 @@ struct HomeView: View {
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.capsule)
             .controlSize(.large)
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                isAnimating = true
+            }
         }
     }
 }
