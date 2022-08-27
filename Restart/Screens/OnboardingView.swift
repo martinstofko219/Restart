@@ -51,13 +51,14 @@ struct OnboardingView: View {
                     Capsule().fill(Color.white.opacity(0.2)).padding(8)
                     
                     
-                    // circle button background
+                    // circle button dynamic background
                     HStack {
                         Capsule().fill(Color("BrandRed"))
                             .frame(width: buttonOffset + 80)
                         Spacer()
                     }
                     
+                    // text
                     Text("Get Started")
                         .font(.system(.title3, design: .rounded))
                         .fontWeight(.bold)
