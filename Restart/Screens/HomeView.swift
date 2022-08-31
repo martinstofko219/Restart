@@ -45,6 +45,7 @@ struct HomeView: View {
             // MARK: BUTTON
             Button {
                 withAnimation {
+                    AudioPlayer.shared.playSound(sound: "success", type: "m4a")
                     showingOnboardingView = true
                 }
             } label: {

@@ -11,6 +11,7 @@
 		C60F97A628B9618E007AFFB5 /* chimeup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C60F97A428B9618E007AFFB5 /* chimeup.mp3 */; };
 		C60F97AC28B963E4007AFFB5 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60F97AB28B963E4007AFFB5 /* OnboardingView.swift */; };
 		C60F97AE28B963FC007AFFB5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60F97AD28B963FC007AFFB5 /* HomeView.swift */; };
+		C6580F7E28BF214A005CA752 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6580F7D28BF214A005CA752 /* AudioPlayer.swift */; };
 		C6EECA7028B9D52C00F86B9D /* CircleGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EECA6F28B9D52C00F86B9D /* CircleGroupView.swift */; };
 		C6F1CA9428B73BB200D693FA /* RestartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1CA9328B73BB200D693FA /* RestartApp.swift */; };
 		C6F1CA9628B73BB200D693FA /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F1CA9528B73BB200D693FA /* MainAppView.swift */; };
@@ -25,6 +26,7 @@
 		C60F97AA28B9637F007AFFB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C60F97AB28B963E4007AFFB5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		C60F97AD28B963FC007AFFB5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C6580F7D28BF214A005CA752 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		C6EECA6F28B9D52C00F86B9D /* CircleGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGroupView.swift; sourceTree = "<group>"; };
 		C6F1CA9028B73BB200D693FA /* Restart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6F1CA9328B73BB200D693FA /* RestartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestartApp.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		C60F97A928B9621A007AFFB5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C6580F7D28BF214A005CA752 /* AudioPlayer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				C60F97AE28B963FC007AFFB5 /* HomeView.swift in Sources */,
 				C6F1CA9628B73BB200D693FA /* MainAppView.swift in Sources */,
 				C6F1CA9428B73BB200D693FA /* RestartApp.swift in Sources */,
+				C6580F7E28BF214A005CA752 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

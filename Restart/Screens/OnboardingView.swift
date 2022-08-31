@@ -18,6 +18,7 @@ struct OnboardingView: View {
     @State private var textTitle = "Share."
     
     private let buttonWidth = UIScreen.main.bounds.width - 80
+    private let hapticFeedback = UINotificationFeedbackGenerator()
     
     var body: some View {
         ZStack {
@@ -100,6 +101,12 @@ struct OnboardingView: View {
                     Capsule().fill(Color.white.opacity(0.2))
                     Capsule().fill(Color.white.opacity(0.2)).padding(8)
                     
+                    // text
+                    Text("Get Started")
+                        .font(.system(.title3, design: .rounded))
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .offset(x: 20)
                     
                     // circle button dynamic background
                     HStack {
@@ -107,13 +114,6 @@ struct OnboardingView: View {
                             .frame(width: buttonOffset + 80)
                         Spacer()
                     }
-                    
-                    // text
-                    Text("Get Started")
-                        .font(.system(.title3, design: .rounded))
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .offset(x: 20)
                     
                     // draggable circle button
                     HStack {
@@ -136,9 +136,12 @@ struct OnboardingView: View {
                                 .onEnded({ _ in
                                     withAnimation(Animation.easeOut(duration: 0.5)) {
                                         if buttonOffset > buttonWidth / 2 {
+                                            AudioPlayer.shared.playSound(sound: "chimeup", type: "mp3")
+                                            hapticFeedback.notificationOccurred(.success)
                                             buttonOffset = buttonWidth - 80
                                             showingOnboardingView = false
                                         } else {
+                                            hapticFeedback.notificationOccurred(.warning)
                                             buttonOffset = 0
                                         }
                                     }
