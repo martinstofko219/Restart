@@ -27,7 +27,7 @@ struct OnboardingView: View {
             VStack(spacing: 20) {
                 Spacer()
                 
-                // MARK: TEXT
+                // MARK: Top Text
                 VStack {
                     Text(textTitle)
                         .font(.system(size: 60))
@@ -49,7 +49,7 @@ struct OnboardingView: View {
                 
                 Spacer()
                 
-                // MARK: ILLUSTRATION
+                // MARK: Illustration
                 ZStack {
                     CircleGroupView(shapeColor: .white, shapeOpacity: 0.2)
                         .offset(x: imageOffset.width * -1)
@@ -95,7 +95,7 @@ struct OnboardingView: View {
                         .opacity(indicatorOpacity)
                 }
                 
-                // MARK: CUSTOM BUTTON
+                // MARK: Custom Slide Button
                 ZStack {
                     // base
                     Capsule().fill(Color.white.opacity(0.2))

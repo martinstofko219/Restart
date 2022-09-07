@@ -17,9 +17,10 @@ struct HomeView: View {
         VStack(spacing: 20) {
             Spacer()
             
-            // MARK: ILLUSTRATION
+            // MARK: Illustration
             ZStack {
                 CircleGroupView(shapeColor: .gray, shapeOpacity: 0.1)
+                
                 Image("character-2")
                     .resizable()
                     .scaledToFit()
@@ -42,7 +43,7 @@ struct HomeView: View {
             
             Spacer()
             
-            // MARK: BUTTON
+            // MARK: Button
             Button {
                 withAnimation {
                     AudioPlayer.shared.playSound(sound: "success", type: "m4a")
